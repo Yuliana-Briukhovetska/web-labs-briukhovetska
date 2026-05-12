@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <style>
+      div {
+        margin-bottom: 4px;
+      }
+
+      input[type='submit'] {
+        margin-top: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Запис на консультацію</h1>
+    <form action="" method="post">
+      <fieldset>
+        <legend>Особиста інформація</legend>
+        <div>
+          <label for="full-name">Введіть свій ПІБ: </label>
+          <input type="text" name="full-name" id="full-name"
+            minlength="5"
+            required />
+        </div>
+
+        <div>
+          <label for="birthday">Введіть свою дату народження: </label>
+          <input type="date" name="birthday" id="birthday" required />
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Контактна інформація</legend>
+        <div>
+          <label for="phone">Введіть свій номер телефону: </label>
+          <input type="tel" name="phone" id="phone"
+            placeholder="+380 000 00 00"
+            required />
+        </div>
+
+        <div>
+          <label for="email">Введіть свою пошту: </label>
+          <input type="email" name="email" id="email"
+            placeholder="something@gmail.com"
+            required />
+        </div>
+      </fieldset>
+
+
+      <fieldset>
+        <legend>Параметри прийому</legend>
+        <div>
+          <label for="specialization">Спеціалізація лікаря:</label>
+          <select id="specialization" name="specialization" required>
+            <option value="">Оберіть лікаря</option>
+            <option value="therapist">Терапевт</option>
+            <option value="cardiologist">Кардіолог</option>
+            <option value="neurologist">Невролог</option>
+            <option value="pediatrician">Педіатр</option>
+            <option value="pediatrician">Інше</option>
+          </select>
+        </div>
+
+        <div>
+          <label for="visit-date">Бажана дата:</label>
+          <input type="date" id="visit-date" name="visit-date" required>
+        </div>
+
+        <div>
+          <label for="visit-time">Бажаний час:</label>
+            <select id="visit-time" name="visit-time" required>
+              <option value="">Оберіть час</option>
+              <option value="09:00">09:00</option>
+              <option value="10:00">10:00</option>
+              <option value="11:00">11:00</option>
+              <option value="14:00">14:00</option>
+              <option value="15:00">15:00</option>
+            </select>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Додатково</legend>
+        <textarea
+          id="health-problem" name="health-problem" rows="5" cols="30"
+        >Опишіть вашу проблему...
+        </textarea>
+      </fieldset>
+
+      <fieldset>
+        <legend>Інше</legend>
+        <textarea
+          id="else" name="else" rows="2" cols="30"
+        >
+        </textarea>
+      </fieldset>
+
+      <div>
+        <input type="checkbox" id="agreement" name="agreement" required />
+        <label for="agreement">Я погоджуюсь з обробкою моїх медичних даних</label>
+      </div>
+
+      <input type="submit" value="Записатися" />
+    </form>
+  </body>
+</html>
