@@ -1,0 +1,149 @@
+/*
+  Стилі для картки. Студент пише сюди.
+
+  Обов'язкові вимоги:
+
+  1. Глобально: * { box-sizing: border-box; }
+  2. CSS-змінні в :root — щонайменше 4 токени
+     (наприклад: --accent, --text, --radius, --space).
+     Решта правил використовує var(...).
+
+  3. Картка:
+     - фон, рамка або тінь, border-radius, padding;
+     - фіксована ширина ~280px, центрування на сторінці;
+     - елементи в стовпець, кнопка завжди прилягає до низу
+       (підказка: flex-direction: column + margin-top: auto).
+
+  4. Зображення:
+     - фіксоване співвідношення сторін через aspect-ratio;
+     - object-fit: cover, щоб не спотворювалось.
+
+  5. Опис (.card-description):
+     - максимум 2 рядки з трикрапкою (-webkit-line-clamp: 2,
+       display: -webkit-box, -webkit-box-orient: vertical, overflow: hidden).
+
+  6. Hover на картці:
+     - субтильна elevation (зміна тіні або translateY(-2px));
+     - плавна transition (~200ms).
+
+  7. Кнопка:
+     - :hover (зміна фону/тексту);
+     - :focus-visible (видимий outline для клавіатури);
+     - transition (~150ms).
+
+  Цільовий вигляд — у target-card.html (відкрити окремо).
+*/
+
+/* Студент починає звідси */
+:root {
+  --body-bgc: #f4f6f8;
+  --card-bgc: #ffffff;
+  --button-bgc:#2222db;
+  --button-text: #ffffff;
+  --price-color: #2222db;
+  --color-text-dark: #1a1a1a;
+
+  --primary-color: #000000;
+  --secodary-color: #5a5757;
+  --color-primary-hover: #173e7c;
+
+  --border-color: #d6d6d6;
+  --shadow-color: rgba(0, 0, 0, 0.1);
+  --shadow-hover: 0 8px 24px rgba(0, 0, 0, 0.15);
+  --transition-fast: 150ms ease;
+  --transition-normal: 200ms ease;
+
+  --radius: 4px;
+  --space-base: 20px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  background-color: var(--body-bgc);
+  font-family: sans-serif;
+  font-size: 12px;
+}
+
+.card {
+  background-color: var(--card-bgc);
+  width: 280px;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  box-shadow: 0 4px 10px var(--shadow-color);
+  padding: var(--space-base);
+  margin: 20px;
+
+  display: flex;
+  flex-direction: column;
+  transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-hover);
+}
+
+.card-image {
+  width: 100%;
+  object-fit: cover;
+  aspect-ratio: 16 / 14;
+  margin-bottom: 20px;
+}
+
+.card-description {
+  font-size: 1em;
+  color: var(--secodary-color);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+
+.card-title {
+  font-size: 1.5em;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.card-meta {
+  font-size: 1em;
+  color: var(--secodary-color);
+  margin-bottom: 10px;
+}
+
+.card-price {
+  color: var(--price-color);
+  font-size: 1.4em;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+/* .card-price:hover {
+  border: 2px solid #000;
+} */
+
+.card-action {
+  font-weight: 600;
+  background-color: var(--button-bgc);
+  color: var(--button-text);
+  border: 0;
+  border-radius: var(--radius);
+  padding: 5px;
+  transition: background-color var(--transition-fast), outline var(--transition-fast), outline-offset var(--transition-fast);
+}
+
+.card-action:hover {
+  background-color: var(--color-primary-hover);
+}
+
+.card-action:focus-visible {
+  outline: 2px solid var(--color-text-dark);
+  outline-offset: 2px;
+}

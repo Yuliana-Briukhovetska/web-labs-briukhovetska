@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Картка — практична CSS</title>
+  <link rel="stylesheet" href="card.css">
+</head>
+<body>
+
+  <!--
+    Варіант контенту визначається викладачем.
+    Структура (теги, класи) однакова для всіх варіантів —
+    змінюється тільки контент усередині.
+
+    Варіант A — Картка ТОВАРУ
+    Варіант B — Картка ПРОФІЛЮ
+    Варіант C — Картка СТАТТІ
+    Варіант D — Картка КУРСУ
+  -->
+
+  <article class="card">
+    <img class="card-image"
+         src="imac.png"
+         alt="Зображення для картки">
+
+    <h3 class="card-title">Apple IMac 24" M1 8 GPU Silver 2021</h3>
+
+    <p class="card-meta">
+      Код: 329481
+      <span>Є в наявності</span>
+    </p>
+
+    <p class="card-price">68,860 грн</p>
+
+    <p class="card-description">
+      Тип: Моноблок | Тип процесора: Apple M1 | Передвстановлена ОС: macOS Big Sur
+      |Об'єм оперативної пам'яті, ГБ: 8 | Об'єм жорсткого диска, ГБ: немає | Об'єм SSD, ГБ: 256
+      | Графічний чіпсет: Інтегрований 8-ядерний GPU | Діагональ: 23,5 | Роздільна здатність: 4480×2520
+    </p>
+
+    <button class="card-action" type="button">
+      Дізнатися більше
+    </button>
+  </article>
+
+</body>
+</html>
